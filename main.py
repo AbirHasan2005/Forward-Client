@@ -12,10 +12,10 @@ User = Client(session_name=Config.STRING_SESSION, api_hash=Config.API_HASH, api_
 @User.on_message(filters.text | filters.media & ~filters.edited)
 async def main(client, message):
     # Checks
-    if not Config.FORWARD_TO_CHAT_ID or not Config.FORWARD_FROM_CHAT_ID or not Config.USER_ID:
-        await client.send_message(chat_id="me",
-                                  text=f"#VARS_MISSING: Please Set `FORWARD_FROM_CHAT_ID` & `FORWARD_TO_CHAT_ID` & `USER_ID` Config!")
-        return
+#     if not Config.FORWARD_TO_CHAT_ID or not Config.FORWARD_FROM_CHAT_ID or not Config.USER_ID:
+#         await client.send_message(chat_id="me",
+#                                   text=f"#VARS_MISSING: Please Set `FORWARD_FROM_CHAT_ID` & `FORWARD_TO_CHAT_ID` & `USER_ID` Config!")
+#         return
 
     if message.text == "!start" and message.from_user.id == int(Config.USER_ID):
         await message.edit(text="Hi, Myself!\nI am Alive XD", parse_mode="Markdown", disable_web_page_preview=True)
