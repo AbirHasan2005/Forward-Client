@@ -1,0 +1,38 @@
+{
+    "name": "This is Telegram Messages Forwarder Userbot by @AbirHasan2005",
+    "description": "This is Telegram Messages Forwarder Userbot in Pyrogram by @AbirHasan2005",
+    "keywords": [
+        "telegram",
+        "messages",
+        "forwarder",
+        "userbot"
+    ],
+    "repository": "https://github.com/AbirHasan2005/Forward-Client",
+    "website": "https://telegram.dog/AbirHasan2005",
+    "success_url": "https://t.me/Discovery_Updates",
+    "env": {
+        "API_ID": {
+            "description": "Get this value from my.telegram.org or @TeleORG_Bot"
+        },
+        "API_HASH": {
+            "description": "Get this value from my.telegram.org or @TeleORG_Bot"
+        },
+        "STRING_SESSION": {
+            "description": "Get this from @StringSessionGen_Bot"
+        },
+        "OWNER_ID": {
+            "description": "Your Telegram User Client ID"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
