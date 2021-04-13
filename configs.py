@@ -17,7 +17,7 @@ class Config(object):
     # Your User ID
     USER_ID = os.environ.get("USER_ID", None)
     # Sleep Time while Kang
-    SLEEP_TIME = int(os.environ.get("SLEEP_TIME", 5))
+    SLEEP_TIME = int(os.environ.get("SLEEP_TIME", 10))
     # Heroku Management
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY")
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME")
