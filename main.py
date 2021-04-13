@@ -10,7 +10,7 @@ from configs import Config
 User = Client(session_name=Config.STRING_SESSION, api_hash=Config.API_HASH, api_id=Config.API_ID)
 
 
-async kanger(msg):
+async def kanger(msg):
     await msg.edit(text="Forwarding Now ...")
     async for message in User.iter_history(chat_id=int(Config.FORWARD_FROM_CHAT_ID), reverse=True):
         try:
@@ -19,7 +19,8 @@ async kanger(msg):
             await User.send_message(chat_id="me", text=f"#FloodWait: Stopping Forwarder for `{e.x}s`!")
             await asyncio.sleep(e.x)
         except UserDeactivatedBan:
-            print("Congratulations!\nYour Account Banned Successfully!\nI already told you use a Fake Account. Hope you remember.")
+            print(
+                "Congratulations!\nYour Account Banned Successfully!\nI already told you use a Fake Account. Hope you remember.")
             break
         except Exception as err:
             await User.send_message(chat_id="me", text=f"#ERROR: `{err}`")
@@ -38,7 +39,8 @@ async def main(client, message):
         return
 
     if message.text == "!start" and (message.from_user.id == int(Config.USER_ID)):
-        await message.edit(text="Hi, Myself!\nThis is a Forwarder Userbot by @AbirHasan2005", parse_mode="Markdown", disable_web_page_preview=True)
+        await message.edit(text="Hi, Myself!\nThis is a Forwarder Userbot by @AbirHasan2005", parse_mode="Markdown",
+                           disable_web_page_preview=True)
     elif message.text == "!help" and (message.from_user.id == int(Config.USER_ID)):
         await message.edit(
             text="This UserBot can forward messages from any Chat to any other Chat also you can kang all messages from one Chat to another Chat.\n\n👨🏻‍💻 **Commands:**\n• `!start`\n• `!help`\n• `!kang`\n\n©️ **Developer:** @AbirHasan2005\n👥 **Support Group:** [【★ʟя★】](https://t.me/linux_repo)",
