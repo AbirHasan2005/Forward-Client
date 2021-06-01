@@ -1,10 +1,9 @@
 # Forward-Client
 This is Telegram Messages Forwarder Userbot by [@AbirHasan2005](https://github.com/AbirHasan2005).
 
-### In-Testing ...
 Use this at your own risk. I will not be responsible for any kind of issue while using this! Better use a different Telegram Account instead of using Main Telegram Account.
 
-## Features:
+### Features:
 - Kang Whole Chat Messages to another Chat.
     - Can cause Telegram Account Ban!
 - Forward From Chat To Chat.
@@ -16,9 +15,17 @@ Use this at your own risk. I will not be responsible for any kind of issue while
 - `API_ID` - Get from my.telegram.org or [@TeleORG_Bot](https://t.me/TeleORG_Bot)
 - `API_HASH` - Get from my.telegram.org or [@TeleORG_Bot](https://t.me/TeleORG_Bot)
 - `STRING_SESSION` - Get this from [@StringSessionGen_Bot](https://t.me/StringSessionGen_Bot)
+- `FORWARD_FILTERS` - Filters can be `text`, `video`, `document`, `gif`, `sticker`, `photo`, `audio`, `poll`, `forwarded`. Separate with Space.
 - `FORWARD_TO_CHAT_ID` - Forward To Chat ID
 - `FORWARD_FROM_CHAT_ID` - Forward From Chat ID
-- `USER_ID` - Your Telegram User Client ID
+- `FORWARD_AS_COPY` - Forward Messages as Copy or with Forward Tag. Value should be `True`/`False`.
+
+### **Commands:**
+- `!start` - Check UserBot Alive or Not.
+- `!help` - Get this Message.
+- `!kang` - Start All Messages Kanger.
+- `!restart` - Restart Heroku App Dyno Workers.
+- `!stop` - Stop Kanger & Restart Service.
 
 ### Support Group:
 <a href="https://t.me/linux_repo"><img src="https://img.shields.io/badge/Telegram-Join%20Telegram%20Group-blue.svg?logo=telegram"></a>
@@ -26,7 +33,7 @@ Use this at your own risk. I will not be responsible for any kind of issue while
 ### Deploy Now:
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/AbirHasan2005/Forward-Client)
 
-### Host on Private Server:
+### Host Locally:
 ```sh
 git clone https://github.com/AbirHasan2005/Forward-Client
 cd Forward-Client
