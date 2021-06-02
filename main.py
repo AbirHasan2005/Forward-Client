@@ -25,15 +25,14 @@ async def main(client: Client, message: Message):
         except FloodWait as e:
             await asyncio.sleep(e.x)
         return
-    USER_ID = (await User.get_me()).id
-    if (message.text == "!start") and (message.from_user.id == USER_ID):
+    if (message.text == "!start") and (message.from_user.id == (await client.get_me()).id):
         await message.edit(text=f"Hi, **{(await client.get_me()).first_name}**!\nThis is a Forwarder Userbot by @AbirHasan2005", parse_mode="Markdown",
                            disable_web_page_preview=True)
-    elif (message.text == "!help") and (message.from_user.id == USER_ID):
+    elif (message.text == "!help") and (message.from_user.id == (await client.get_me()).id):
         await message.edit(
             text=Config.HELP_TEXT,
             parse_mode="Markdown", disable_web_page_preview=True)
-    elif (message.text in ["!restart", "!stop"]) and (message.from_user.id == USER_ID):
+    elif (message.text in ["!restart", "!stop"]) and (message.from_user.id == (await client.get_me()).id):
         if Config.HEROKU_APP is None:
             await message.edit(
                 text="Restarting Userbot ...",
@@ -48,7 +47,7 @@ async def main(client: Client, message: Message):
             )
             Config.HEROKU_APP.restart()
             time.sleep(30)
-    elif (message.text == "!kang") and (message.from_user.id == USER_ID):
+    elif (message.text == "!kang") and (message.from_user.id == (await client.get_me()).id):
         editable = await message.edit(
             text=f"Trying to Get All Messages from `{str(Config.FORWARD_FROM_CHAT_ID)}` and Forwarding to `{str(Config.FORWARD_TO_CHAT_ID)}` ...",
             parse_mode="Markdown", disable_web_page_preview=True)
