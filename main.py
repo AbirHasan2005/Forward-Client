@@ -14,6 +14,7 @@ from helpers.kanger import Kanger
 from helpers.forwarder import ForwardMessage
 
 User = Client(session_name=Config.STRING_SESSION, api_hash=Config.API_HASH, api_id=Config.API_ID)
+USER_ID = User.get_me().id
 
 
 @User.on_message((filters.text | filters.media) & ~filters.edited)
@@ -25,7 +26,6 @@ async def main(client: Client, message: Message):
         except FloodWait as e:
             await asyncio.sleep(e.x)
         return
-    USER_ID = (await User.get_me()).id
     if (message.text == "!start") and (message.from_user.id == USER_ID):
         await message.edit(text=f"Hi, **{(await client.get_me()).first_name}**!\nThis is a Forwarder Userbot by @AbirHasan2005", parse_mode="Markdown",
                            disable_web_page_preview=True)
