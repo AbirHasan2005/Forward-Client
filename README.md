@@ -19,6 +19,7 @@ Use this at your own risk. I will not be responsible for any kind of issue while
 - `FORWARD_TO_CHAT_ID` - Forward To Chat ID
 - `FORWARD_FROM_CHAT_ID` - Forward From Chat ID
 - `FORWARD_AS_COPY` - Forward Messages as Copy or with Forward Tag. Value should be `True`/`False`.
+- `BLOCKED_EXTENSIONS` - Don't Forward those Media Messages which contains Blocked Extensions. Example: `mp4 mkv mp3 zip rar`. Separate with Space.
 
 ### **Commands:**
 - `!start` - Check UserBot Alive or Not.

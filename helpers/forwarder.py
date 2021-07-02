@@ -6,6 +6,7 @@ from pyrogram import Client
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait
 from helpers.filters import FilterMessage
+from helpers.block_exts_handler import CheckBlockedExt
 
 
 async def ForwardMessage(client: Client, msg: Message):
@@ -15,6 +16,10 @@ async def ForwardMessage(client: Client, msg: Message):
         if can_forward == 400:
             return 400
         ## --- Check 2 --- ##
+        has_blocked_ext = await CheckBlockedExt(event=msg)
+        if has_blocked_ext is True:
+            return 400
+        ## --- Check 3 --- ##
         if Config.FORWARD_AS_COPY is True:
             await msg.copy(int(Config.FORWARD_TO_CHAT_ID))
         else:

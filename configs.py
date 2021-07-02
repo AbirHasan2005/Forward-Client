@@ -17,6 +17,7 @@ class Config(object):
     # Filters for Forwards
     DEFAULT_FILTERS = "video document photo audio text gif forwarded poll sticker"
     FORWARD_FILTERS = list(set(x for x in os.environ.get("FORWARD_FILTERS", DEFAULT_FILTERS).split()))
+    BLOCKED_EXTENSIONS = list(set(x for x in os.environ.get("BLOCKED_EXTENSIONS", "").split()))
     # Forward as Copy. Value Should be True or False
     FORWARD_AS_COPY = bool(os.environ.get("FORWARD_AS_COPY", True))
     # Sleep Time while Kang

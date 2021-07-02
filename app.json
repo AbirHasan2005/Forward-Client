@@ -30,6 +30,10 @@
             "description": "Filters can be `text`, `video`, `document`, `gif`, `sticker`, `photo`, `audio`, `poll`, `forwarded`. Separate with Space.",
             "required": false
         },
+        "BLOCKED_EXTENSIONS": {
+            "description": "Don't Forward those Media Messages which contains Blocked Extensions. Example: `mp4 mkv mp3 zip rar`. Separate with Space.",
+            "required": false
+        },
         "HEROKU_API_KEY": {
             "description": "Put Heroku API Key from https://dashboard.heroku.com/account"
         },
