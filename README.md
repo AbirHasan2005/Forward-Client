@@ -4,9 +4,10 @@ This is Telegram Messages Forwarder Userbot by [@AbirHasan2005](https://github.c
 Use this at your own risk. I will not be responsible for any kind of issue while using this! Better use a different Telegram Account instead of using Main Telegram Account.
 
 ### Features:
-- Kang Whole Chat Messages to another Chat.
+- Kang Whole Chat Messages to other Chats.
     - Can cause Telegram Account Ban!
 - Forward From Chat To Chat.
+    - Can Forward from Multiple Chats to Multiple Chats :)
     - Automatically forward new messages From Chat To Chat.
 - Userbot 😁
 - Simple & Userfriendly 😅
@@ -16,8 +17,8 @@ Use this at your own risk. I will not be responsible for any kind of issue while
 - `API_HASH` - Get from my.telegram.org or [@TeleORG_Bot](https://t.me/TeleORG_Bot)
 - `STRING_SESSION` - Get this from [@StringSessionGen_Bot](https://t.me/StringSessionGen_Bot)
 - `FORWARD_FILTERS` - Filters can be `text`, `video`, `document`, `gif`, `sticker`, `photo`, `audio`, `poll`, `forwarded`. Separate with Space.
-- `FORWARD_TO_CHAT_ID` - Forward To Chat ID
-- `FORWARD_FROM_CHAT_ID` - Forward From Chat ID
+- `FORWARD_TO_CHAT_ID` - Forward To Chat IDs. Separate with Space.
+- `FORWARD_FROM_CHAT_ID` - Forward From Chat IDs. Separate with Space.
 - `FORWARD_AS_COPY` - Forward Messages as Copy or with Forward Tag. Value should be `True`/`False`.
 - `BLOCKED_EXTENSIONS` - Don't Forward those Media Messages which contains Blocked Extensions. Example: `mp4 mkv mp3 zip rar`. Separate with Space.
 

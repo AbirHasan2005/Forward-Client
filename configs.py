@@ -11,9 +11,9 @@ class Config(object):
     # Get This From @StringSessionGen_Bot
     STRING_SESSION = os.environ.get("STRING_SESSION")
     # Forward From Chat ID
-    FORWARD_FROM_CHAT_ID = os.environ.get("FORWARD_FROM_CHAT_ID", None)
+    FORWARD_FROM_CHAT_ID = list(set(int(x) for x in os.environ.get("FORWARD_FROM_CHAT_ID", "-100").split()))
     # Forward To Chat ID
-    FORWARD_TO_CHAT_ID = os.environ.get("FORWARD_TO_CHAT_ID", None)
+    FORWARD_TO_CHAT_ID = list(set(int(x) for x in os.environ.get("FORWARD_TO_CHAT_ID", "-100").split()))
     # Filters for Forwards
     DEFAULT_FILTERS = "video document photo audio text gif forwarded poll sticker"
     FORWARD_FILTERS = list(set(x for x in os.environ.get("FORWARD_FILTERS", DEFAULT_FILTERS).split()))

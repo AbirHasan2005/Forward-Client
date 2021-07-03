@@ -18,7 +18,7 @@ User = Client(session_name=Config.STRING_SESSION, api_hash=Config.API_HASH, api_
 
 @User.on_message((filters.text | filters.media) & ~filters.edited)
 async def main(client: Client, message: Message):
-    if (Config.FORWARD_TO_CHAT_ID is None) or (Config.FORWARD_FROM_CHAT_ID is None):
+    if (-100 in Config.FORWARD_TO_CHAT_ID) or (-100 in Config.FORWARD_FROM_CHAT_ID):
         try:
             await client.send_message(chat_id="me",
                                       text=f"#VARS_MISSING: Please Set `FORWARD_FROM_CHAT_ID` or `FORWARD_TO_CHAT_ID` Config!")
@@ -48,14 +48,20 @@ async def main(client: Client, message: Message):
             Config.HEROKU_APP.restart()
             time.sleep(30)
     elif (message.text == "!kang") and (message.from_user.id == (await client.get_me()).id):
-        editable = await message.edit(
-            text=f"Trying to Get All Messages from `{str(Config.FORWARD_FROM_CHAT_ID)}` and Forwarding to `{str(Config.FORWARD_TO_CHAT_ID)}` ...",
+        if len(Config.FORWARD_FROM_CHAT_ID) > 1:
+            await message.edit(
+                text="Sorry Sir,\nWe can Kang only one Chat! But you put multiple Chat IDs in `FORWARD_FROM_CHAT_ID` Config!",
+                disable_web_page_preview=True
+            )
+            return
+        await message.edit(
+            text=f"Trying to Get All Messages from `{Config.FORWARD_FROM_CHAT_ID[0]}` and Forwarding to {' '.join(Config.FORWARD_TO_CHAT_ID)} ...",
             parse_mode="Markdown", disable_web_page_preview=True)
         await asyncio.sleep(5)
-        try_kang = await Kanger(c=User, m=editable)
+        try_kang = await Kanger(c=User, m=message)
         if try_kang == 400:
             return
-    elif message.chat.id == (int(Config.FORWARD_FROM_CHAT_ID)):
+    elif message.chat.id in Config.FORWARD_FROM_CHAT_ID:
         try_forward = await ForwardMessage(client, message)
         if try_forward == 400:
             return

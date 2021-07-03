@@ -21,10 +21,10 @@
             "description": "Get this from @StringSessionGen_Bot"
         },
         "FORWARD_FROM_CHAT_ID": {
-            "description": "Forward From Chat ID"
+            "description": "Forward From Chat IDs. Separate with Space."
         },
         "FORWARD_TO_CHAT_ID": {
-            "description": "Forward To Chat ID"
+            "description": "Forward To Chat IDs. Separate with Space."
         },
         "FORWARD_FILTERS": {
             "description": "Filters can be `text`, `video`, `document`, `gif`, `sticker`, `photo`, `audio`, `poll`, `forwarded`. Separate with Space.",
