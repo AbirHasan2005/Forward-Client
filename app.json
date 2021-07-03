@@ -34,6 +34,10 @@
             "description": "Don't Forward those Media Messages which contains Blocked Extensions. Example: `mp4 mkv mp3 zip rar`. Separate with Space.",
             "required": false
         },
+        "MINIMUM_FILE_SIZE": {
+            "description": "Minimum File Size for Media Message to be able to Forward. Should be in Bytes.",
+            "required": false
+        },
         "HEROKU_API_KEY": {
             "description": "Put Heroku API Key from https://dashboard.heroku.com/account"
         },
