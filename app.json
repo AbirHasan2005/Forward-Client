@@ -38,6 +38,10 @@
             "description": "Minimum File Size for Media Message to be able to Forward. Should be in Bytes.",
             "required": false
         },
+        "BLOCK_FILES_WITHOUT_EXTENSIONS": {
+            "description": "Value can be `True`/`False`. If `True` those files which doesn't have file extension will not be Forwarded.",
+            "required": false
+        },
         "HEROKU_API_KEY": {
             "description": "Put Heroku API Key from https://dashboard.heroku.com/account"
         },
