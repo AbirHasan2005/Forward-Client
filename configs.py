@@ -40,4 +40,4 @@ This UserBot can forward messages from any Chat to any other Chat also you can k
 • `!stop` - Stop Kanger & Restart Service.
 
 ©️ **Developer:** @AbirHasan2005
-👥 **Support Group:** [【★ʟя★】](https://t.me/linux_repo)"""
+👥 **Support Group:** [【★ʟя★】](https://t.me/DevsZone)"""
