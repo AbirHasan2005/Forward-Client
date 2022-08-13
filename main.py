@@ -13,10 +13,10 @@ from configs import Config
 from helpers.kanger import Kanger
 from helpers.forwarder import ForwardMessage
 
-User = Client(session_name=Config.STRING_SESSION, api_hash=Config.API_HASH, api_id=Config.API_ID)
+User = Client(name='pyrogram', api_hash=Config.API_HASH, api_id=Config.API_ID, session_string=Config.STRING_SESSION)
 
 
-@User.on_message((filters.text | filters.media) & ~filters.edited)
+@User.on_message((filters.text | filters.media))
 async def main(client: Client, message: Message):
     if (-100 in Config.FORWARD_TO_CHAT_ID) or (-100 in Config.FORWARD_FROM_CHAT_ID):
         try:
