@@ -32,7 +32,27 @@ async def main(client: Client, message: Message):
         await message.edit(
             text=Config.HELP_TEXT,
             parse_mode="Markdown", disable_web_page_preview=True)
-    elif (message.text in ["!restart", "!stop"]) and (message.from_user.id == (await client.get_me()).id):
+    elif (message.text.startswith("!add_forward_")):
+        if len(message.text.split(" ", 1)) < 2:
+            return await message.edit(f"{message.text} chat_id")
+        for x in message.text.split(" ", 1)[-1].split(" "):
+            if x.isdigit() and message.text.startswith("!add_forward_to_chat"):
+                Config.FORWARD_TO_CHAT_ID.append(int(x))
+            elif x.isdigit() and message.text.startswith("!add_forward_from_chat"):
+                Config.FORWARD_FROM_CHAT_ID.append(int(x))
+            else:
+                pass
+    elif (message.text.startswith("!remove_forward_")):
+        if len(message.text.split(" ", 1)) < 2:
+            return await message.edit(f"{message.text} chat_id")
+        for x in message.text.split(" ", 1)[-1].split(" "):
+            if x.isdigit() and message.text.startswith("!remove_forward_to_chat"):
+                Config.FORWARD_TO_CHAT_ID.remove(int(x))
+            elif x.isdigit() and message.text.startswith("!remove_forward_from_chat"):
+                Config.FORWARD_FROM_CHAT_ID.remove(int(x))
+            else:
+                pass
+    elif (message.text in ["!restart"]) and (message.from_user.id == (await client.get_me()).id):
         if Config.HEROKU_APP is None:
             await message.edit(
                 text="Restarting Userbot ...",
