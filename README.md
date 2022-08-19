@@ -1,5 +1,5 @@
 # Forward-Client
-This is Telegram Messages Forwarder Userbot by [@AbirHasan2005](https://github.com/AbirHasan2005).
+This is Telegram Messages Forwarder bot by [@AbirHasan2005](https://github.com/AbirHasan2005).
 
 Use this at your own risk. I will not be responsible for any kind of issue while using this! Better use a different Telegram Account instead of using Main Telegram Account.
 
@@ -9,7 +9,7 @@ Use this at your own risk. I will not be responsible for any kind of issue while
 - Forward From Chat To Chat.
     - Can Forward from Multiple Chats to Multiple Chats :)
     - Automatically forward new messages From Chat To Chat.
-- Userbot 😁
+- Bot 😁
 - Simple & Userfriendly 😅
 
 ### Configs:
@@ -25,7 +25,7 @@ Use this at your own risk. I will not be responsible for any kind of issue while
 - `BLOCK_FILES_WITHOUT_EXTENSIONS` - Value can be `True`/`False`. If `True` those files which doesn't have file extension will not be Forwarded.
 
 ### **Commands:**
-- `!start` - Check UserBot Alive or Not.
+- `!start` - Check Bot Alive or Not.
 - `!help` - Get this Message.
 - `!kang` - Start All Messages Kanger.
 - `!restart` - Restart Heroku App Dyno Workers.
