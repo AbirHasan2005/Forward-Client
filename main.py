@@ -30,7 +30,7 @@ async def main(client: Client, message: Message):
             await client.send_message(chat_id="me",
                                       text=f"#VARS_MISSING: Please Set `FORWARD_FROM_CHAT_ID` or `FORWARD_TO_CHAT_ID` Config!")
         except FloodWait as e:
-            await asyncio.sleep(e.x)
+            await asyncio.sleep(e.value)
         return
     if (message.text == "!start") and message.from_user.is_self:
         if not RUN["isRunning"]:
