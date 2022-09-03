@@ -71,7 +71,9 @@ async def main(client: Client, message: Message):
                             chat_ids.append(chat.id)
                 if not chat_ids:
                     return await message.edit("No Chats Found !!")
-                Config.FORWARD_FROM_CHAT_ID += chat_ids
+                for chat_id in chat_ids:
+                    if chat_id not in Config.FORWARD_TO_CHAT_ID:
+                        Config.FORWARD_TO_CHAT_ID.append(chat_id)
             else:
                 pass
         return await message.edit("Added Successfully!")
