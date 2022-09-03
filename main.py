@@ -79,11 +79,14 @@ async def main(client: Client, message: Message):
         if len(message.text.split(" ", 1)) < 2:
             return await message.edit(f"{message.text} chat_id")
         for x in message.text.split(" ", 1)[-1].split(" "):
-            if x.isdigit() and message.text.startswith("!remove_forward_to_chat"):
-                Config.FORWARD_TO_CHAT_ID.remove(int(x))
-            elif x.isdigit() and message.text.startswith("!remove_forward_from_chat"):
-                Config.FORWARD_FROM_CHAT_ID.remove(int(x))
-            else:
+            try:
+                if x.isdigit() and message.text.startswith("!remove_forward_to_chat"):
+                    Config.FORWARD_TO_CHAT_ID.remove(int(x))
+                elif x.isdigit() and message.text.startswith("!remove_forward_from_chat"):
+                    Config.FORWARD_FROM_CHAT_ID.remove(int(x))
+                else:
+                    pass
+            except ValueError:
                 pass
         return await message.edit("Removed Successfully!")
     elif (message.text in ["!restart"]) and message.from_user.is_self:
